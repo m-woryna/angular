@@ -9,7 +9,7 @@ AngularJS is easy to learn.
 efekty na stonie https://m-woryna.github.io/angular_ola/
 
 AngularJS Example
-
+<pre>
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -25,7 +25,7 @@ AngularJS Example
 
 </body>
 </html>
-
+</pre>
 AngularJS Introduction
 
 AngularJS is a JavaScript framework. It can be added to an HTML page with a <script> tag.
