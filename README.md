@@ -6,6 +6,7 @@ ANGULAR
 AngularJS extends HTML with new attributes. 
 AngularJS is perfect for Single Page Applications (SPAs).
 AngularJS is easy to learn.
+efekty na stonie https://m-woryna.github.io/angular_ola/
 
 AngularJS Example
 
