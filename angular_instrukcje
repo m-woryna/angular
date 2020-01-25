@@ -27,6 +27,8 @@ The ng-bind directive binds the content of the <p> element to the application va
 Zmienne:
 <div ng-app="" ng-init="firstName='John'">
 <p>The name is <span ng-bind="firstName"></span></p>
+albo
+<p>The name is <span data-ng-bind="firstName"></span></p>
 
 
 
