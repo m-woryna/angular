@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2" >
+</head> 
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+<br>
+Nazwa glinku : <input type="text" ng-model="rosl">
+Przekierowanie do : <input type="text" ng-model="roslp"><br>
+Podpis : <input type="text" ng-model="roslt"><br>
+Foto : <input type="text" ng-model="rosli">
+Komentarz do foto: <input type="text" ng-model="komfoto"> <br>
+<br>
+{{ glowa }}
+<br>
+{{ myKod }}
+<br>
+{{ glowak }}
+<br>
+{{ ht }}
+<br>
+{{myWelcome}}
+<br>
+{{myWelcome1}}
+<br>
+{{myWelcome2}}
+<br><br>
+{{rosl + "='" + divclas + '"gallery">'}}
+<br> &nbsp 
+{{ link + '"' + "'.$domena." + "'" + roslp + '">'}}
+<br> &nbsp &nbsp 
+{{ roslo + '"' + "'.$domena." + "'" + rosli + '"' + ' BORDER="0" WIDTH="120" HEIGHT="160" ALT="' + komfoto  + '">' + linkk}}
+<br> &nbsp 
+{{divclas + '"desc">' + roslt + divclask}}
+<br> &nbsp 
+{{divclask + "';"}}
+<br>
+{{"print " + rosl + ";"}}
+<br>
+{{koniec}}
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("erro_dom.htm")
+  .then(function(response) {
+      $scope.myWelcome = response.data;
+  });
+  $http.get("kodowanie.htm")
+  .then(function(response) {
+      $scope.myKod = response.data;
+  });
+  $http.get("erro_dom1.htm")
+  .then(function(response) {
+      $scope.myWelcome1 = response.data;
+  });
+  $http.get("erro_dom2.htm")
+  .then(function(response) {
+      $scope.myWelcome2 = response.data;
+  });
+  $scope.ht = "<html>";
+  $scope.glowa = "<head>";
+  $scope.glowak = "</head>"; 
+  $scope.linkk = "</a>";
+  $scope.grubep = "<b>";
+  $scope.grubek = "</b>";
+  $scope.nowal = "<br>";
+  $scope.link = "<a HREF=";
+  $scope.divclas = "<div class=";
+  $scope.divclask = "</div>";
+  $scope.koniec = "?>";
+  $scope.roslo = "<IMG SRC=";
+  $scope.rosl = "$miltonia_zdj";
+  $scope.roslp = "miltonia.php";
+  $scope.roslt = "Miltonia";
+  $scope.rosli = "foto_m/miltonia743a.jpg";
+  $scope.komfoto = "rośliny pokojowe, rosliny doniczkowe, miltonia, storczyk";
+  });
+</script>
+
+</body>
+</html>
