@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2" >
+</head> 
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+<br>
+Nazwa linku : <input type="text" ng-model="rosl">
+Przekierowanie do : <input type="text" ng-model="roslp"><br>
+Tytuł : <input type="text" ng-model="roslt"><br>
+Foto : <input type="text" ng-model="rosli">
+Komentarz do foto: <input type="text" ng-model="komfoto"> <br>
+<br>
+Krótki opis : <textarea ng-model="roslina"></textarea>
+<br><br><br>
+{{ glowa }}
+<br>
+{{ myKod }}
+<br>
+{{ glowak }}
+<br>
+{{ ht }}
+<br>
+{{myWelcome}}
+<br>
+{{myWelcome1}}
+<br>
+{{myWelcome2}}
+<br>
+{{rosl + "='" + link + '"' + "'.$domena." + "'" + roslp + '">' + grubep +  roslt + grubek
++ nowal + nowal}}
+<br>
+{{ roslo + '"' + "'.$domena." + "'" + rosli + '"' + ' BORDER="0" WIDTH="80" HEIGHT="107" HSPACE="10" VSPACE="2"  ALIGN="LEFT" ALT="' + komfoto  + '">' + linkk}}
+<br>
+{{roslina}}
+<br>
+{{nowal}}
+<br>
+{{link + '"' + "'.$domena."  + "'" + roslp  +'">'}}
+<br>
+{{grubep + 'Więcej informacji...' + grubek + linkk +"';"}}
+<br>
+{{"print " + "'" + parclas + '"' + 'trzy' + '">' + "';"}}
+<br>
+{{"print " + rosl + ";"}}
+<br>
+{{"print " + "'" + park + "';"}}
+<br>
+{{koniec}}
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("erro_dom.htm")
+  .then(function(response) {
+      $scope.myWelcome = response.data;
+  });
+  $http.get("kodowanie.htm")
+  .then(function(response) {
+      $scope.myKod = response.data;
+  });
+  $http.get("erro_dom1.htm")
+  .then(function(response) {
+      $scope.myWelcome1 = response.data;
+  });
+  $http.get("erro_dom2.htm")
+  .then(function(response) {
+      $scope.myWelcome2 = response.data;
+  });
+  $scope.ht = "<html>";
+  $scope.glowa = "<head>";
+  $scope.glowak = "</head>"; 
+  $scope.linkk = "</a>";
+  $scope.grubep = "<b>";
+  $scope.grubek = "</b>";
+  $scope.nowal = "<br>";
+  $scope.link = "<a HREF=";
+  $scope.parclas = "<p class=";
+  $scope.park = "</p>";
+  $scope.koniec = "?>";
+  $scope.rosl = "$bukszpan_krzew";
+  $scope.roslp = "bukszpan.php";
+  $scope.roslt = "BUKSZPAN";
+  $scope.roslo = "<IMG SRC=";
+  $scope.rosli = "bukszpan386a.jpg";
+  $scope.komfoto = "krzewy liściaste bukszpan";
+  $scope.roslina = "Nie opadające na zimę, ciemnozielone, eliptyczne liście, okrywające gęsto pędy rośliny. Kwiaty bukszpanu są drobne, żółtawe i niepozorne. Przyciągają pszczoły. Roślina ma zwartą budowę, tworzy gęste krzewy. Roślina bardzo łatwa w uprawie i długowieczna. Bukszpan jest niewybredny co do gleby i stanowiska. ";
+  });
+</script>
+
+</body>
+</html>
