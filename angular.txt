@@ -653,8 +653,219 @@ Just imagine if these objects were records from a database.
 
 The ng-app Directive
 ---------------------
+The ng-app directive defines the root element of an AngularJS application.
+The ng-app directive will auto-bootstrap (automatically initialize) the application when a web page is loaded.
 
------------ https://www.w3schools.com/angular/angular_expressions.asp
+The ng-init Directive
+---------------------
+The ng-init directive defines initial values for an AngularJS application.
+Normally, you will not use ng-init. You will use a controller or module instead.
+You will learn more about controllers and modules later.
+
+The ng-model Directive
+----------------------------
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+The ng-model directive can also:
+
+- Provide type validation for application data (number, email, required).
+- Provide status for application data (invalid, dirty, touched, error).
+- Provide CSS classes for HTML elements.
+- Bind HTML elements to HTML forms.
+Read more about the ng-model directive in the next chapter.
+
+Create New Directives
+---------------------------
+In addition to all the built-in AngularJS directives, you can create your own directives.
+
+New directives are created by using the .directive function.
+
+To invoke the new directive, make an HTML element with the same tag name as the new directive.
+
+When naming a directive, you must use a camel case name, w3TestDirective, but when invoking it, you must use - separated name, w3-test-directive:
+example:
+------------------
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<w3-test-directive></w3-test-directive>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>
+-------------------
+
+You can invoke a directive by using:
+
+Element name
+Attribute
+Class
+Comment
+The examples below will all produce the same result:
+
+Element name
+
+<w3-test-directive></w3-test-directive>
+
+exMPLE:
+--------------------
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<w3-test-directive></w3-test-directive>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>
+--------------------
+Attribute
+
+<div w3-test-directive></div>
+EXAMPLE
+------------------------
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<div w3-test-directive></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>
+--------------------------
+Class
+
+<div class="w3-test-directive"></div>
+example
+--------------------
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<div class="w3-test-directive"></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "C",
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+<p><strong>Note:</strong> You must add the value "C" to the restrict property to be able to invoke the directive from a class name.</p>
+
+</body>
+</html>
+--------------------------
+
+Comment
+
+<!-- directive: w3-test-directive -->
+example
+----------------
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<!-- directive: w3-test-directive -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "M",
+        replace : true,
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+<p><strong>Note:</strong> We've added the <strong>replace</strong> property in this example, otherwise the comment would be invisible.</p>
+
+<p><strong>Note:</strong> You must add the value "M" to the <strong>restrict</strong> property to be able to invoke the directive from a comment.</p>
+
+</body>
+</html>
+
+-----------------------
+
+Restrictions
+You can restrict your directives to only be invoked by some of the methods.
+
+Example
+By adding a restrict property with the value "A", the directive can only be invoked by attributes:
+exMPLE:
+-----------------
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<w3-test-directive></w3-test-directive>
+
+<div w3-test-directive></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "A",
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+<p><strong>Note:</strong> By setting the <strong>restrict</strong> property to "A", only the HTML element with the "w3-test-directive" attribute has invoked the directive.</p>
+
+</body>
+</html>
+-------------------
+The legal restrict values are:
+
+E for Element name
+A for Attribute
+C for Class
+M for Comment
+By default the value is EA, meaning that both Element names and attribute names can invoke the directive.
+----------------------
+
+AngularJS ng-model Directive
+*****************************
+
+
+-------https://www.w3schools.com/angular/angular_model.asp
 
 
 
